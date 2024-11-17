@@ -1,0 +1,81 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity uart_completa is
+    port (
+        clk       : in std_logic;         -- Clock
+        Rst_n     : in std_logic;         -- Reset
+		  Rx_in 		: in std_logic;
+        RxData_out    : out std_logic_vector(7 downto 0) -- Received data
+	 );
+end entity uart_completa;
+
+architecture Behavioral of uart_completa is
+signal clk_modulo : std_logic;
+signal clk_tick : std_logic;
+signal sisas : std_logic;
+signal salida : std_logic_vector(7 downto 0);
+	component Recepcion is
+		port (
+		  clk   : in  std_logic;   --clock de la uart 1/9600 sacarlo con el divde frecuencia
+        Rst_n      : in  std_logic;     -- Reset input
+        Tick       : in std_logic;     -- Each "BaudRate" pulses we create a tick pulse
+		  bit_palabra : in std_logic;
+		  palabra	: out std_logic_vector(7 downto 0);
+		  Enable : out std_logic
+		);
+	end component Recepcion;
+	
+	component uart_baud is
+    port (
+        Clk        : in  std_logic;     -- Clock input
+        Rst_n      : in  std_logic;     -- Reset input
+        Tick       : out std_logic;     -- Each "BaudRate" pulses we create a tick pulse
+        BaudRate   : in  integer -- Value to divide the generator by
+    );
+   end component uart_baud;
+	
+	component div_frec is
+	port(
+
+		clk     : in  std_logic;
+		Nciclos : in	integer;			
+		f       : out std_logic);
+		
+	end component div_frec;
+begin
+	  uart_rx_intento : Recepcion 
+		port map (
+		  clk   => clk_modulo,   --clock de la uart 1/9600 sacarlo con el divde frecuencia
+        Rst_n => Rst_n,     -- Reset input
+        Tick  => clk_tick,         -- Each "BaudRate" pulses we create a tick pulse
+		  bit_palabra => Rx_in,
+		  palabra => salida,
+		  Enable => sisas
+		);
+	
+		  
+		  comp1 : div_frec
+		  port map(
+		  
+		   clk     => clk,
+			Nciclos => 2604,			
+			f   	=> clk_modulo  
+		  );
+		    comp2 : div_frec
+		  port map(
+		  
+		   clk     => clk,
+			Nciclos => 41664,			
+			f   	=> clk_tick  
+		  );
+process(sisas)
+begin
+		  if (sisas = '1') then
+				RxData_out <= salida;
+			end if;
+end process;
+end architecture Behavioral;

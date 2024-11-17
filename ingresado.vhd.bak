@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity ingresado is
+    port (
+		  clk   : in  std_logic;   --clock de la uart 1/9600 sacarlo con el divde frecuencia
+		  nuevodato : in std_logic;
+		  numero : in std_logic_vector(7 downto 0);
+		  acumulado : out std_logic_vector(31  downto 0);
+    );
+end entity ingresado;
+
+architecture funcionamiento of ingresado is
+signal acumulado_aux : std_logic_vector(31  downto 0);
+
+
+process(nuevodato)
+begin
+	if rising_edge(nuevodato) then
+		acumulado_aux <= numero & acumulado_aux(31 downto 8);
+	end if;
+end process;
+acumulado <= acumulado_aux;
+
+end funcionamiento;

@@ -1,0 +1,185 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'comprobar_in'
+Slack : -4.626
+TNS   : -149.253
+
+Type  : Slow 1200mV 85C Model Setup 'cambiar_in'
+Slack : -4.469
+TNS   : -167.986
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.284
+TNS   : -442.920
+
+Type  : Slow 1200mV 85C Model Setup 'pir_1'
+Slack : -4.263
+TNS   : -4.263
+
+Type  : Slow 1200mV 85C Model Setup 'recepcion:uart_rx|datonuevo_aux'
+Slack : -0.654
+TNS   : -4.396
+
+Type  : Slow 1200mV 85C Model Hold 'cambiar_in'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'comprobar_in'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'recepcion:uart_rx|datonuevo_aux'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pir_1'
+Slack : 2.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -229.024
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'cambiar_in'
+Slack : -3.000
+TNS   : -89.246
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'comprobar_in'
+Slack : -3.000
+TNS   : -53.558
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pir_1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'recepcion:uart_rx|datonuevo_aux'
+Slack : -1.487
+TNS   : -35.688
+
+Type  : Slow 1200mV 0C Model Setup 'comprobar_in'
+Slack : -4.262
+TNS   : -137.217
+
+Type  : Slow 1200mV 0C Model Setup 'cambiar_in'
+Slack : -4.110
+TNS   : -153.212
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -4.021
+TNS   : -401.205
+
+Type  : Slow 1200mV 0C Model Setup 'pir_1'
+Slack : -3.930
+TNS   : -3.930
+
+Type  : Slow 1200mV 0C Model Setup 'recepcion:uart_rx|datonuevo_aux'
+Slack : -0.636
+TNS   : -3.378
+
+Type  : Slow 1200mV 0C Model Hold 'cambiar_in'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'comprobar_in'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'recepcion:uart_rx|datonuevo_aux'
+Slack : 0.480
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pir_1'
+Slack : 2.234
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -229.024
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'cambiar_in'
+Slack : -3.000
+TNS   : -89.246
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'comprobar_in'
+Slack : -3.000
+TNS   : -53.558
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pir_1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'recepcion:uart_rx|datonuevo_aux'
+Slack : -1.487
+TNS   : -35.688
+
+Type  : Fast 1200mV 0C Model Setup 'comprobar_in'
+Slack : -1.771
+TNS   : -56.670
+
+Type  : Fast 1200mV 0C Model Setup 'cambiar_in'
+Slack : -1.684
+TNS   : -55.275
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.284
+TNS   : -104.691
+
+Type  : Fast 1200mV 0C Model Setup 'pir_1'
+Slack : -1.187
+TNS   : -1.187
+
+Type  : Fast 1200mV 0C Model Setup 'recepcion:uart_rx|datonuevo_aux'
+Slack : 0.068
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'cambiar_in'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'comprobar_in'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'recepcion:uart_rx|datonuevo_aux'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pir_1'
+Slack : 0.806
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -165.235
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'cambiar_in'
+Slack : -3.000
+TNS   : -65.348
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'comprobar_in'
+Slack : -3.000
+TNS   : -39.129
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pir_1'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'recepcion:uart_rx|datonuevo_aux'
+Slack : -1.000
+TNS   : -24.000
+
+------------------------------------------------------------
