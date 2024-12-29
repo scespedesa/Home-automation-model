@@ -1,0 +1,6 @@
+
+State Machine - |principal|transmision:transmite|estado
+Name estado.verificar estado.transmision estado.inicial 
+estado.inicial 0 0 0 
+estado.transmision 0 1 1 
+estado.verificar 1 0 1 

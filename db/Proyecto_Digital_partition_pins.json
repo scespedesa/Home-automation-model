@@ -1,0 +1,97 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "alarma",
+					"strict" : false
+				},
+				{
+					"name" : "PWM1",
+					"strict" : false
+				},
+				{
+					"name" : "led_datos",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[4]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[5]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[6]",
+					"strict" : false
+				},
+				{
+					"name" : "leds_salida[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pir",
+					"strict" : false
+				},
+				{
+					"name" : "tx_data",
+					"strict" : false
+				},
+				{
+					"name" : "led_activo",
+					"strict" : false
+				},
+				{
+					"name" : "pir_1",
+					"strict" : false
+				},
+				{
+					"name" : "cambiar_in",
+					"strict" : false
+				},
+				{
+					"name" : "comprobar_in",
+					"strict" : false
+				},
+				{
+					"name" : "selector",
+					"strict" : false
+				},
+				{
+					"name" : "pir_2",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "Rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "Rx_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

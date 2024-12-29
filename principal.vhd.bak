@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity principal is
+    port (
+        clk       : in std_logic;         -- Clock
+        activo     : in std_logic;         -- Reset
+		  Rx_in 		: in std_logic;
+        RxData_out    : out std_logic_vector(7 downto 0); -- Received data
+		  pulsador : in std_logic;
+		  TxData : out std_logic
+	 );
+end entity principal;
+
+architecture comportamiento of uart is
+
+end comportamiento;

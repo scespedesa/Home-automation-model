@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity sistema is
+    port (
+		  switch   : in  std_logic;   --clock de la uart 1/9600 sacarlo con el divde frecuencia
+		  clave_ingresada :  std_logic_vector(31  downto 0);  
+		  estado_activo : out std_logic; 
+    );
+end entity sistema;

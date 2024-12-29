@@ -1,0 +1,94 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity recepcion is
+    port (
+		  clk   : in  std_logic;   --clock de la uart 1/9600 sacarlo con el divde frecuencia
+        Rst_n      : in  std_logic;     -- Reset input
+        Tick       : in std_logic;     -- Each "BaudRate" pulses we create a tick pulse
+		  --start_bit  : in std_logic;
+		  bit_palabra : in std_logic;
+		  palabra	: out std_logic_vector(7 downto 0);
+		  Enable : out std_logic
+    );
+end entity recepcion;
+
+architecture comportamiento of recepcion is
+
+type estados_leer is (inicial,bit_inicio,lectura,bit_salida);
+signal estado : estados_leer;
+signal empezar : std_logic := '0';
+
+ begin
+ 
+ process(clk) is
+	variable contador_bits : integer :=0;
+	variable enable_aux : std_logic :='0';
+ begin
+	if rising_edge(clk) then
+			if Rst_n= '1' then
+				estado <= inicial;
+				contador_bits := 0;
+				--palabra <= "00000000";
+				enable_aux := '0';
+			else
+				case estado is
+					when inicial =>
+						estado <= bit_inicio;
+					when  bit_inicio =>
+						if bit_palabra = '0' and empezar ='1' then
+							estado <= lectura;
+						end if;
+						
+					when  lectura => 
+						if (contador_bits /= 8) then
+							contador_bits := contador_bits + 1;
+							estado <= lectura;
+						else
+							 estado <= bit_salida;
+							 enable_aux := '1';
+						end if;
+						
+					when bit_salida =>
+						contador_bits := 0;
+						estado <= inicial;
+					end case;
+			end if;
+		end if;
+Enable <= enable_aux;
+end process;
+
+process(Tick) is
+variable contador_tick : integer :=0;
+variable palabra_aux : std_logic_vector(7 downto 0) :="00000000";
+begin
+	if (rising_edge(Tick)) then
+		if (estado = bit_inicio) then
+			if (contador_tick = 8) then
+				--palabra_aux <= bit_palabra & palabra_aux(7 downto 1);
+				contador_tick := 0;
+				if(bit_palabra = '0') then
+					empezar <= '1';
+				end if;
+			else
+				contador_tick := contador_tick + 1;
+				empezar <= '0';
+			end if;
+			
+		elsif (estado = lectura) then
+			if (contador_tick = 16) then
+				palabra_aux := bit_palabra & palabra_aux(7 downto 1) ;
+				contador_tick := 0;
+			else
+				contador_tick := contador_tick + 1;
+			end if;
+		end if;
+	end if;
+	
+palabra <= palabra_aux;
+end process;
+
+end comportamiento;
